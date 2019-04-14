@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+  DocumentRoot /var/www/foo
+
+  <Directory /var/www/foo>
+    Require all granted
+    Options Indexes MultiViews FollowSymLinks
+    AllowOverride all
+  </Directory>
+</VirtualHost>

@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build:
+       context: ./php-apache
+    container_name: 'app'
+    ports:
+      - 8080:80
+    volumes:
+      - ./html:/var/www/html:rw
+    environment:
+      DOCUMENT_ROOT: '/var/www/html/public'
