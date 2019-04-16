@@ -3,10 +3,11 @@ set -e
 
 if [ -z $DOCUMENT_ROOT ]
 then
-	echo "Document root is not defined. Using \"/var/www/html\"."
+    echo "Document root is not defined. Using \"/var/www/html\"."
 else
-	echo "Document root is being set to \"$DOCUMENT_ROOT\"."
+    echo "Document root is being set to \"$DOCUMENT_ROOT\"."
     sed -i -e "s:/var/www/html:$DOCUMENT_ROOT:g" /etc/apache2/sites-available/000-default.conf
+    cat /etc/apache2/sites-available/000-default.conf
 fi
 
 # Note: we don't just use "apache2ctl" here because it itself is just a shell-script wrapper around apache2 which provides extra functionality like "apache2ctl start" for launching apache2 in the background.

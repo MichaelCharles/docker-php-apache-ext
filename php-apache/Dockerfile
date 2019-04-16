@@ -51,6 +51,8 @@ RUN sudo chmod 777 /usr/local/bin/apache-start.sh
 RUN chmod +x /usr/local/bin/apache-start.sh
 WORKDIR /var/www/html
 
+RUN a2enmod rewrite
+
 EXPOSE 80
 CMD ["apache-start.sh"]
 
